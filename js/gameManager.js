@@ -1,3 +1,4 @@
+let currentIndex = 0;
 $(document).ready(function () {
   /* Handle input. */
   $("body").on("keyup", "input", function (e) {
@@ -62,9 +63,11 @@ function newGame() {
     });
 
     /* Get random words. */
-    let id = Math.floor(Math.random() * items.length);
-    let word = items[id];
-    let splitWord = word.split("");
+   
+
+
+currentIndex = (currentIndex + 1) % words.length;
+let currentWord = words[currentIndex];
 
     /* Clear old HTML. */
     $(".row-model").empty();
